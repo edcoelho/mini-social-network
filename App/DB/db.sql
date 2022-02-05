@@ -3,20 +3,18 @@ CREATE DATABASE IF NOT EXISTS cleckr;
 CREATE TABLE IF NOT EXISTS cleckr.user(
     id INT AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    nickname VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     bio VARCHAR(255),
     birth_date DATE NOT NULL,
-    gender VARCHAR(16) NOT NULL,
     pwd_hash VARCHAR(255) NOT NULL,
     PRIMARY KEY(id),
-    UNIQUE(nickname, email)
+    UNIQUE(username, email)
 );
 
-CREATE TABLE IF NOT EXISTS cleckr.post(
+CREATE TABLE IF NOT EXISTS cleckr.cleck(
     id INT AUTO_INCREMENT,
     text VARCHAR(350) NOT NULL,
-    image VARCHAR(255),
     datetime DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     user_id INT NOT NULL,
     PRIMARY KEY(id),

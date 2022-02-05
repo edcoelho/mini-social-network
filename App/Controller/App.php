@@ -1,16 +1,16 @@
 <?php
 
 namespace App\Controller;
-use App\View\View;
+use App\View\Render;
 
 class App{
     public function index(){
-        $view = new View();
+        $render = new Render();
 
         if(isset($_SESSION["user_id"])){
-            $view->renderHome();
+            $render->renderHome();
         }else{
-            $view->renderPage("login.html");
+            $render->renderPage("login.html");
         }
     }
 }

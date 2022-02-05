@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Controller;
-use App\Model\Post;
-use App\View\View;
+use App\Model\Cleck;
+use App\View\Render;
 
 class Home{
 
     public function getClecks(){
-        $model = new Post();
+        $model = new Cleck();
         $clecks = $model->selectRecent($_SESSION["user_id"], $_GET["offset"]);
 
-        $view = new View();
-        $view->renderClecks($clecks);
+        $render = new Render();
+        $render->renderClecks($clecks);
     }
 
     public function postCleck(){

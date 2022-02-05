@@ -9,9 +9,9 @@ class User{
     public function select($email){
         try{
             $con = new Connection();
-            $sql = "SELECT * FROM user WHERE email=:pv;";
+            $sql = "SELECT * FROM user WHERE email=:e;";
             $ps = $con->getDB()->prepare($sql);
-            $ps->bindParam("pv", $email);
+            $ps->bindParam("e", $email);
             $ps->setFetchMode(PDO::FETCH_OBJ);
             if($ps->execute()){
                 $con->close();
@@ -23,7 +23,7 @@ class User{
         }catch(PDOException $e){
             die("[-] Erro na execução da query (select@User): {$e->getMessage()}");
         }
-    } 
+    }
 
     public function selectAll(){
         try{
@@ -43,14 +43,14 @@ class User{
         }
     }
 
-    public function insert($name, $nickname, $email, $birth_date, $gender, $pwd_hash){
+    public function insert($name, $username, $email, $birth_date, $gender, $pwd_hash){
         try{
             $con = new Connection();
-            $sql = "INSERT INTO user (name, nickname, email, birth_date, gender, pwd_hash) VALUES (:n, :nn, :e, :b, :g, :ph)";
+            $sql = "INSERT INTO user (name, username, email, birth_date, gender, pwd_hash) VALUES (:n, :nn, :e, :b, :g, :ph)";
             $ps = $con->getDB()->prepare($sql);
 
             $ps->bindParam("n", $name);
-            $ps->bindParam("nn", $nickname);
+            $ps->bindParam("nn", $username);
             $ps->bindParam("e", $email);
             $ps->bindParam("b", $birth_date);
             $ps->bindParam("g", $gender);

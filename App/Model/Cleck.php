@@ -4,19 +4,19 @@ namespace App\Model;
 use App\DB\Connection;
 use PDO;
 
-class Post{
+class Cleck{
 
     public function selectRecent($user_id, $offset = 0){
         try{
             $con = new Connection();
 
-            $sql = "SELECT post.*, user.name as user_name, user.nickname FROM 
-            post INNER JOIN user ON post.user_id = user.id
-            INNER JOIN following ON post.user_id = following.followed_id
+            $sql = "SELECT cleck.*, user.name as user_name, user.username FROM 
+            cleck INNER JOIN user ON cleck.user_id = user.id
+            INNER JOIN following ON cleck.user_id = following.followed_id
             WHERE following.user_id = :u
             UNION
-            SELECT post.*, user.name as user_name, user.nickname FROM
-            post INNER JOIN user ON post.user_id = user.id WHERE post.user_id = :u
+            SELECT cleck.*, user.name as user_name, user.username FROM
+            cleck INNER JOIN user ON cleck.user_id = user.id WHERE cleck.user_id = :u
             ORDER BY timestamp DESC, id DESC
             LIMIT 10 OFFSET :o";
 
@@ -32,14 +32,14 @@ class Post{
                 return null;
             }
         }catch(PDOException $e){
-            die("[-] Erro na execução da query (selectRecent@Post): {$e->getMessage()}");
+            die("[-] Erro na execução da query (selectRecent@Cleck): {$e->getMessage()}");
         }
     }
 
     public function insert($text, $image, $user_id){
         try{
             $con = new Connection();
-            $sql = "INSERT INTO post (text, image, user_id) VALUES (:t, :img, :u);";
+            $sql = "INSERT INTO cleck (text, image, user_id) VALUES (:t, :img, :u);";
             $ps = $con->getDB()->prepare($sql);
 
             $ps->bindParam("t", $text);
@@ -54,7 +54,7 @@ class Post{
                 return false;
             }
         }catch(PDOException $e){
-            die("[-] Erro na execução da query (insert@Post): {$e->getMessage()}");
+            die("[-] Erro na execução da query (insert@Cleck): {$e->getMessage()}");
         }
     }
 

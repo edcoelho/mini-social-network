@@ -1,9 +1,8 @@
 <?php
 
 namespace App\View;
-use App\Controller\Home;
 
-class View{
+class Render{
     public function render($html){
         echo $html;
     }
