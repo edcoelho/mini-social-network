@@ -15,7 +15,7 @@ class Home{
     }
 
     public function postCleck(){
-        $model = new Post();
+        $model = new Cleck();
         $model->insert($_POST["text"], "", $_SESSION["user_id"]);
     }
 }
