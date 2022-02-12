@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <p id="msg-status"></p>
+    <form action="#" method="post" id="signup-form">
+        <label for="name">Nome</label>
+        <input type="text" name="name" required>
+        <br>
+        <label for="username">Usuário</label>
+        <input type="text" name="username" required>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+        <br>
+        <label for="birth_date">Data de Nascimento</label>
+        <input type="date" name="birth_date" required>
+        <br>
+        <label for="gender">Gênero</label>
+        <select name="gender">
+            <option selected disabled>Selecione uma opção</option>
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+            <option value="nonbinary">Não binário</option>
+        </select>
+        <br>
+        <label for="password">Senha</label>
+        <input type="password" name="pwd" required>
+        <br>
+        <input type="submit" id="signup-btn" value="Sign up">
+    </form>
+    <script src="js/jquery.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

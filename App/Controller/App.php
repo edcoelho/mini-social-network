@@ -13,4 +13,14 @@ class App{
             $render->renderPage("login.html");
         }
     }
+
+    public function signup(){
+        $render = new Render();
+        
+        if(isset($_SESSION["user_id"])){
+            header("location: ./");
+        }else{
+            $render->renderPage("signup.html");
+        }
+    }
 }

@@ -1,8 +1,11 @@
 <?php
 
-// Set DB connection and rename this file to "config.php"
+// Set these configuration and rename this file to "config.php"
 
-define("DB_HOST", "");
-define("DB_USER", "");
+// Database
+define("DB_HOST", "Insert DB host here");
+define("DB_USER", "Insert DB user here");
 define("DB_PWD", "Insert DB password here");
 define("DB_NAME", "cleckr");
+
+define("DOMAIN", "");

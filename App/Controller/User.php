@@ -19,4 +19,13 @@ class User{
         
         echo $render->renderJSON($login_response);
     }
+
+    public function signup(){
+        $model = new Model();
+        $render = new Render();
+
+        $signup_response = $model->validateAndDoSignup();
+
+        echo $render->renderJSON($signup_response);
+    }
 }
