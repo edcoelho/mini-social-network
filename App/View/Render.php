@@ -35,4 +35,13 @@ class Render{
         echo "\t<div id=\"posts-box\"></div>\n";
         $this->renderPage("footer.html", "home");
     }
+
+    public function renderError($errCode, $msg){
+        $this->renderPage("header.html", "error");
+        echo <<<HTML
+            <h3>Error $errCode</h3>
+            <p>$msg</p>
+        HTML;
+        $this->renderPage("footer.html", "error");
+    }
 }

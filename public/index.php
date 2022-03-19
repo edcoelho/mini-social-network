@@ -24,4 +24,11 @@ $router->group("cleck");
 $router->get("/get", "Home:getClecks");
 $router->post("/post", "Home:postCleck");
 
+$router->group("error");
+$router->get("/{errCode}", "App:routeError");
+
 $router->dispatch();
+
+if($router->error()){
+    $router->redirect("/error/{$router->error()}");
+}

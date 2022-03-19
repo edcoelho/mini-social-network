@@ -23,4 +23,31 @@ class App{
             $render->renderPage("signup.html");
         }
     }
+
+    public function routeError($params){
+        $render = new Render();
+
+        $errCode = (int)$params["errCode"];
+        $msg = "";
+
+        switch($errCode){
+            case 400:
+                $msg = "Invalid request.";
+                break;
+            case 404:
+                $msg = "Page not found.";
+                break;
+            case 405:
+                $msg = "Method not supported!";
+                break;
+            case 501:
+                $msg = "Method not implemented!";
+                break;
+            default:
+                $msg = "Something went wrong :(";
+                break;
+        }
+
+        $render->renderError($errCode, $msg);
+    }
 }
