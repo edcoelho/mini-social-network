@@ -18,6 +18,7 @@ $router->get("/signup", "App:signup");
 $router->group("user");
 $router->post("/login", "User:login");
 $router->post("/signup", "User:signup");
+$router->get("/logout", "User:logout");
 
 $router->group("cleck");
 $router->get("/get", "Home:getClecks");

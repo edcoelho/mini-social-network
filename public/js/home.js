@@ -2,7 +2,7 @@ $(document).ready(() => {
     function getPosts(){
         $.ajax({
             url: "cleck/get",
-            data: "offset=" + $(".post").length,
+            data: "offset=" + $(".cleck").length,
             dataType: "html",
             method: "get",
             success: function(response){
@@ -30,4 +30,8 @@ $("#post-btn").on("click", (e) => {
 		}
 	})
 	e.preventDefault()
+})
+
+$("#logout").on("click", (e) => {
+    window.location = "user/logout";
 })
