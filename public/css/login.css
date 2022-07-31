@@ -1,0 +1,8 @@
+@import url("style.css");
+
+body {
+    background: var(--random-img) no-repeat fixed center;
+    background-size: cover;
+
+    height: 100vh !important;
+}

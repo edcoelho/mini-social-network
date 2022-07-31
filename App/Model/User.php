@@ -3,6 +3,7 @@
 namespace App\Model;
 use App\DB\Connection;
 use PDO;
+use PDOException;
 
 class User{
 

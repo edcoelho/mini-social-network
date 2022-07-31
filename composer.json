@@ -1,5 +1,5 @@
 {
-    "name": "edcoelho/cleckr",
+    "name": "edcoelho/mini-social-network",
     "description": "A simple Twitter-based social network.",
     "type": "project",
     "license": "MIT",
@@ -14,7 +14,7 @@
     "authors": [
         {
             "name": "Edson Coelho",
-            "email": "edcoelho.dev@outlook.com"
+            "email": "edcoelho.dev@gmail.com"
         }
     ],
     "require": {

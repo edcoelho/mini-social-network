@@ -1,3 +1,6 @@
+# In order to make this work, you must enable Apache rewrite module.
+# You can learn how to do it on Ubuntu or Arch Linux here: https://gist.github.com/dario2994/9445587
+
 RewriteEngine On
 #Options All -Indexes
 
